@@ -1,5 +1,11 @@
 # FOXBASE IN CLOUD
 
+## INSTALL
+
+ ```pip install rply```
+ 
+## RUN
+ ``` python flask_app.py ```
 ## GRAMMAR
 
 ## SAMPLE 
@@ -11,3 +17,5 @@
 	endfor
 	? A
 ```
+
+![Image of sample ](./static/img/sample.png)
