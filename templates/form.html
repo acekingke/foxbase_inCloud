@@ -1,0 +1,10 @@
+{% extends "module.html" %}
+ {% block formcontext %} 
+    <form method="post" action="{{ url_for('testform', file_name=file_name) }}">
+      {% for ask in asks %}
+      <label for="{{ ask.valname }}">{{ ask.prompt}}</label>
+      <input type="text" name="{{ ask.valname }}" id="{{ ask.valname }}">
+      {% endfor %}
+      <input type="submit" data-inline="true" value="提交">
+    </form>
+ {% endblock %}

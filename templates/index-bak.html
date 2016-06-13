@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>try-hylang</title>
+    <meta name="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src={{ url_for('static', filename='js/jquery-1.4.2.min.js') }}></script>
+    <script type="text/javascript" src={{ url_for('static', filename='js/jquery.console.js') }}></script>
+    <script type="text/javascript" src= {{ url_for('static', filename='js/repl.js') }}></script>
+    <script type="text/javascript">
+      var hy_version = '{{hy_version}}';
+      var server_software = '{{server_software}}';
+    </script>
+    
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/style.css') }}>
+    <meta property="og:title" content="try-hylang" />
+    <meta property="og:image" content="http://docs.hylang.org/en/latest/_images/hy_logo-smaller.png" />
+    <meta property="og:description" content="hylang repl">
+  <body>
+      <div id="hy-console" class="console"></div>
+      <div id="footer"><a href="mailto:aceking.ke@gmail.com?subject='foxbase in cloud'" target="_new">connect to aceking.ke</a></div>
+  </body>
+</html>
