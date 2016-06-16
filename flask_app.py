@@ -16,7 +16,7 @@ from flask import Flask, request,  redirect, url_for, abort, \
 app = Flask(__name__)
 from lex import lexer
 from parse import parser
-import ast
+import fox_ast as ast
 import err as myerr
 import vistor
 
@@ -50,9 +50,9 @@ def capture(f):
 @capture
 def out(source):    
     try:
-        ast =  parser.parse(lexer.lex(source))
+        ast2 =  parser.parse(lexer.lex(source))
         vistor.exec_cmd_block(ast)
-        del ast
+        del ast2
     except myerr.ParserError as e:
         print >>sys.stderr , e.message 
     except Exception ,e:
@@ -63,7 +63,7 @@ def index():
 @app.route('/eval', methods = ["POST"])
 def evals():
 
-    from ast import data
+    from fox_ast import data
     v = getattr(data, "symbols", None)
     if v is None:
         setattr(data, "symbols", {
@@ -78,7 +78,7 @@ def evals():
 
 @app.route('/test')
 def test():
-    from ast import data
+    from fox_ast import data
     v = getattr(data, "symbols", None)
     if v is None:
         setattr(data, "symbols", {
@@ -95,7 +95,7 @@ def testform(file_name):
     print file_name
     from err import AcceptError
     if  request.method == 'GET':
-        from ast import data
+        from fox_ast import data
         v = getattr(data, "symbols", None)
         if v is None:
             setattr(data, "symbols", {
@@ -121,7 +121,7 @@ def testform(file_name):
         return render_template("form.html", file_name=file_name, title="testform", asks=asks)
     elif request.method == "POST":
         #print 'here'
-        from ast import data
+        from fox_ast import data
         v = getattr(data, "symbols", None)
         if v is None:
             print 'in here'

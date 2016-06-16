@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 __author__ = 'kyc'
 import datetime
-from ast import *
+from fox_ast import *
 from err import *
 def wrap_fun(func):
     def _warp(cmd):

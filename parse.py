@@ -2,7 +2,7 @@
 __author__ = 'kyc'
 from lex import lg
 from rply import ParserGenerator
-import ast
+import fox_ast as ast
 from err import  *
 
 pg = ParserGenerator([i.name for i in lg.rules],
