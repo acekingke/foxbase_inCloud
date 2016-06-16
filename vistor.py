@@ -250,6 +250,7 @@ def exec_while_cmd(cmd):
     exec_cmd(expr)
     while expr.val == '.T.':
         rt = exec_cmd_block(cmd_block)
+        exec_cmd(expr)
         if rt == "EXIT":
             break
 
