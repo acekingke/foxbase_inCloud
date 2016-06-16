@@ -11,6 +11,7 @@ import sys
 from flask import Flask, request,  redirect, url_for, abort, \
      render_template
 
+import logging
 
 # create our little application :)
 app = Flask(__name__)
@@ -57,6 +58,7 @@ def out(source):
         print >>sys.stderr , e.message 
     except Exception ,e:
         print >>sys.stderr, e
+        print logging.exception("The stack")
 @app.route('/')
 def index(): 
     return render_template('index.html', hy_version="v0.1", server_software='cloud foxbase')

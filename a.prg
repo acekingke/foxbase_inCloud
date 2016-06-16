@@ -5,6 +5,6 @@ endfor
 ? A
 
 A=1
-DO while A > 50
+DO while A < 50
 A = A + A
-end do
+enddo
