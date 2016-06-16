@@ -51,7 +51,7 @@ def capture(f):
 def out(source):    
     try:
         ast2 =  parser.parse(lexer.lex(source))
-        vistor.exec_cmd_block(ast)
+        vistor.exec_cmd_block(ast2)
         del ast2
     except myerr.ParserError as e:
         print >>sys.stderr , e.message 
