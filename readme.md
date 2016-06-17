@@ -5,7 +5,7 @@
 
  ```pip install rply```
 
- More information about rply, see `rply`_.
+ More information about rply, see [rply][1].
  
 ## RUN
  ``` python flask_app.py ```
@@ -31,4 +31,4 @@ enddo
 ```
 
 ![Image of sample ](./static/img/sample.png)
-.. _`rply`: https://rply.readthedocs.io/
+[1]: https://rply.readthedocs.io/
